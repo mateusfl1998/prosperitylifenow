@@ -115,7 +115,7 @@
     <script src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" id="vturb-smartplayer-js" fetchpriority="high"></script>
     <style>
         .imageye-selected { outline: 2px solid black !important; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important; }
-        .esconder { display: block !important; opacity: 1 !important; visibility: visible !important; }
+        .esconder { display: none; opacity: 0; visibility: hidden; }
     </style>
 </head>
 <body>
@@ -436,6 +436,45 @@
         document.head.appendChild(s);
     </script>
 
+    <!-- Efeito de Delay do Pitch (Esconder botões) -->
+    <script>
+        var listPitch = {
+            '69908b3672552541034e1aee': { delay: 1370, utm: 'utm_content=front.v1.f1' },
+            '69bb4f406ced9201ea4e4bbd': { delay: 1370, utm: 'utm_content=front.v1.f1' },
+            '69e852c6d73cfcb936d93643': { delay: 1370, utm: 'utm_content=front.v1.f2' },
+            '69e98b79d73cfcb936dbec41': { delay: 1370, utm: 'utm_content=front.v1.f3' },
+            '69ef8522b4ba2692ad54258a': { delay: 1370, utm: 'utm_content=front.v1.f4' }
+        };
+
+        var alreadyInitialized = false;
+
+        document.addEventListener('player:ready', function (event) {
+            if (alreadyInitialized) return;
+
+            var detail = event.detail || {};
+            var config = detail.config || {};
+            var player = detail.player || document.querySelector('vturb-smartplayer');
+            
+            var playerId = config.id || (player ? player.getAttribute('original-id') || player.getAttribute('id').replace('vid-', '') : '69908b3672552541034e1aee');
+            var pitchConfig = listPitch[playerId] || { delay: 1370 };
+
+            alreadyInitialized = true;
+
+            if (player && typeof player.displayHiddenElements === 'function') {
+                player.displayHiddenElements(pitchConfig.delay, ['.esconder'], { persist: true });
+            } else {
+                setTimeout(function() {
+                    var els = document.querySelectorAll('.esconder');
+                    for(var i=0; i<els.length; i++) {
+                        els[i].style.display = 'block';
+                        els[i].style.opacity = '1';
+                        els[i].style.visibility = 'visible';
+                        els[i].style.transition = 'opacity 0.5s ease-in';
+                    }
+                }, pitchConfig.delay * 1000);
+            }
+        });
+    </script>
 
 </body>
 </html>
