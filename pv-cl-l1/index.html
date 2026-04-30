@@ -33,83 +33,131 @@
 
     <!-- Inline Styles (Maintained from original) -->
     <style>
-        .social-proof-wrapper { font-family: 'Poppins', sans-serif; background-color: var(--dark-bg); color: var(--light-gray); padding: var(--spacing-xl) var(--spacing-sm); width: 100%; max-width: 1200px; margin: 0 auto; box-sizing: border-box; }
-        .social-proof-wrapper .section-title { font-family: 'Cinzel', serif; font-size: clamp(2em, 4vw, 2.5em); margin-bottom: var(--spacing-sm); font-weight: 700; text-align: center; color: #d8b4fe; }
-        .social-proof-wrapper .section-subtitle { font-size: 1.1em; color: var(--text-accent); max-width: 650px; margin: 0 auto var(--spacing-xxl) auto; text-align: center; line-height: 1.6; }
-        .social-proof-wrapper .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; max-width: 1200px; margin: 0 auto; }
-        .social-proof-wrapper .proof-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--border-radius-small); padding: var(--spacing-md); display: flex; flex-direction: column; border: 1px solid rgba(255, 255, 255, 0.1); }
-        .social-proof-wrapper .social-proof-card:hover { background: rgba(255, 255, 255, 0.05); }
-        .social-proof-wrapper .proof-quote { font-family: 'Poppins', sans-serif; font-size: 1.2em; font-weight: 700; font-style: italic; color: var(--text-primary); margin-bottom: var(--spacing-sm); position: relative; padding-left: 30px; }
-        .social-proof-wrapper .proof-quote::before { content: '\f10d'; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; top: 0; color: var(--text-purple); opacity: 0.6; }
-        .social-proof-wrapper .proof-body { color: var(--text-light-purple); line-height: 1.7; margin-bottom: auto; padding-bottom: 20px; }
-        .social-proof-wrapper .proof-author-info { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(168, 85, 247, 0.3); padding-top: 15px; margin-top: 20px; }
-        .social-proof-wrapper .proof-author-name { font-weight: 500; color: #ffffff; }
-        .social-proof-wrapper .proof-rating .fa-star { color: #ffc107; margin-left: 3px; }
-
-        .plant-seed-btn { display: inline-flex; align-items: center; gap: 12px; background: #ff6b35; color: white; padding: 16px 28px; border: 2px solid #ff8c42; border-radius: 30px; font-size: 16px; font-weight: 600; cursor: pointer; text-decoration: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3); transition: all 0.3s ease; }
-        .plant-seed-btn:hover { background: #e55a2b; border-color: #d14d26; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4); }
-
-        .cta-section { background: var(--dark-purple); color: var(--text-secondary); padding: var(--spacing-lg) var(--spacing-sm); border-radius: var(--border-radius); text-align: center; margin: 40px 0; }
-        #minha-secao { padding: 60px 0; text-align: center; }
-        h1, h2 { color: var(--text-secondary); margin-bottom: var(--spacing-md); }
-        p { color: var(--medium-gray); margin-bottom: var(--spacing-sm); }
-
-        .spiritual-section { background: var(--dark-purple); color: var(--text-secondary); padding: var(--spacing-lg); display: flex; justify-content: center; align-items: center; text-align: center; font-family: 'Lato', sans-serif; line-height: 1.5; position: relative; overflow: hidden; border-radius: 20px; }
-        .spiritual-section::before, .spiritual-section::after { content: ""; position: absolute; width: clamp(200px, 30vw, 300px); height: clamp(200px, 30vw, 300px); border-radius: 50%; background: var(--glass-purple); z-index: 0; }
-        .spiritual-section::before { top: -50%; left: -50%; }
-        .spiritual-section::after { bottom: -50%; right: -50%; }
-        .spiritual-container { max-width: min(800px, 90vw); width: 100%; position: relative; z-index: 2; padding: clamp(15px, 4vw, 25px); background: var(--glass-dark); border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); border: 1px solid rgba(155, 89, 182, 0.3); }
-        .spiritual-section h3 { font-family: 'Merriweather', serif; font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; margin-bottom: clamp(10px, 3vw, 15px); color: var(--text-light-purple); text-shadow: 0 0 15px rgba(200, 160, 255, 0.7); letter-spacing: 0.5px; }
-        .spiritual-section p { font-size: clamp(1rem, 2.5vw, 1.1rem); font-weight: 300; margin-bottom: clamp(10px, 3vw, 15px); max-width: min(650px, 100%); margin-left: auto; margin-right: auto; line-height: 1.6; }
-        .spiritual-section blockquote { font-family: 'Merriweather', serif; border-left: 4px solid #a37acc; margin: 20px auto; padding: 12px 25px; font-style: italic; color: var(--text-primary); max-width: 550px; text-align: left; background: var(--glass-quote); border-radius: var(--border-radius-small); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
-        .spiritual-section blockquote p { margin-bottom: 8px; font-size: 1.05em; line-height: 1.6; }
-        .spiritual-section cite { display: block; text-align: right; font-style: normal; font-size: 1em; color: var(--text-soft-purple); font-family: 'Lato', sans-serif; }
-        .spiritual-section .donation-text { font-size: 1em; color: var(--text-medium-purple); margin-top: 20px; font-family: 'Lato', sans-serif; line-height: 1.5; }
-
-        .pricing-section { background: var(--dark); padding: var(--spacing-xl) var(--spacing-sm); text-align: center; }
-        .pricing-quote h2 { color: var(--text-secondary); font-family: 'Merriweather', serif; font-size: clamp(1.8rem, 4vw, 2.2rem); font-weight: 600; margin-bottom: clamp(15px, 3vw, 20px); text-shadow: 0 0 10px rgba(200, 160, 255, 0.5); }
-        .separator { color: var(--text-muted); font-size: clamp(1.2rem, 3vw, 1.5rem); margin-bottom: clamp(30px, 6vw, 40px); letter-spacing: 2px; }
-        .pricing-options { display: flex; justify-content: center; align-items: center; gap: clamp(10px, 2vw, 15px); flex-wrap: wrap; max-width: min(1000px, 95vw); margin: 0 auto; flex-direction: column; }
-        .pricing-options a { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: block; will-change: transform; }
-        .pricing-options a:hover { transform: scale(1.03); }
-        .pricing-options img { width: min(90vw, 400px); height: auto; transition: transform 0.3s ease; }
-
-        .divisor-section { text-align: center; margin: clamp(-30px, -5vw, 10px) 0; padding: var(--spacing-sm); max-width: 1000px; }
-        .divisor-image { width: 100%; max-width: min(600px, 85vw); height: auto; }
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
 
         :root {
-            --bg: #0b0b14; --surface: #121224; --card: #17172b; --border: rgba(124, 92, 255, 0.3); --text: #e7e7f1; --muted: #b7b7cb; --accent: #7c5cff; --accent-2: #41c1f2; --cta-a: #ff7a18; --cta-b: #ffd166; --radius: 16px; --radius-sm: 10px; --shadow: 0 8px 20px rgba(0, 0, 0, 0.35); --shadow-h: 0 12px 28px rgba(0, 0, 0, 0.45); --pad-xs: clamp(8px, 1.5vw, 12px); --pad-sm: clamp(12px, 2vw, 16px); --pad-md: clamp(18px, 3vw, 24px); --pad-lg: clamp(28px, 4vw, 40px); --pad-xl: clamp(44px, 6vw, 64px);
+            --bg-color: #101015;
+            --card-bg: #15151c;
+            --purple-dark: #120e1e;
+            --purple-border: #2c1b4d;
+            --purple-accent: #6d28d9;
+            --text-main: #e2e2e2;
+            --text-muted: #9ca3af;
+            --orange-gradient: linear-gradient(135deg, #ff8c42 0%, #e55a2b 100%);
         }
-        body { color: var(--text); background: radial-gradient(circle at 50% 0%, #1a1a3a 0%, #0b0b14 60%); margin: 0; padding: 0; position: relative; }
-        body::before { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 30px 30px; z-index: -1; pointer-events: none; }
-        section { padding: var(--pad-xl) 0; position: relative; z-index: 1; }
 
-        .cta-button, .plant-seed-btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 18px 36px; border-radius: 999px; background: linear-gradient(135deg, #ff7a18 0%, #e55a2b 100%); color: white !important; font-weight: 800; font-size: 1.1rem; letter-spacing: 0.5px; border: none !important; text-decoration: none; box-shadow: 0 0 25px rgba(255, 122, 24, 0.5) !important; text-transform: uppercase; transition: all 0.3s ease !important; animation: pulseGlow 2s infinite !important; }
-        .cta-button:hover, .plant-seed-btn:hover { background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%); transform: translateY(-3px) scale(1.02); box-shadow: 0 0 35px rgba(255, 122, 24, 0.7) !important; }
-        .cta-button::after { content: "→"; margin-left: 5px; transition: transform 0.3s ease; }
-        .cta-button:hover::after { transform: translateX(5px); }
-        
-        @keyframes pulseGlow { 0% { box-shadow: 0 0 15px rgba(255, 122, 24, 0.4) !important; } 50% { box-shadow: 0 0 30px rgba(255, 122, 24, 0.8) !important; } 100% { box-shadow: 0 0 15px rgba(255, 122, 24, 0.4) !important; } }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-        .spiritual-section { background: var(--surface) !important; border: 1px solid var(--border) !important; border-radius: var(--radius) !important; margin: var(--pad-lg) var(--pad-sm) !important; box-shadow: 0 0 30px rgba(124, 92, 255, 0.1) !important; position: relative; overflow: hidden; }
-        .spiritual-section::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at center, rgba(124, 92, 255, 0.1) 0%, transparent 50%) !important; z-index: 0; pointer-events: none; border-radius: 50%; }
-        .spiritual-container { max-width: 820px; margin: 0 auto; padding: var(--pad-lg) !important; position: relative; z-index: 1; border: none !important; box-shadow: none !important; background: transparent !important; }
-        .spiritual-section h3 { font-weight: 800; color: #c9c9ff !important; text-shadow: 0 0 10px rgba(201, 201, 255, 0.3) !important; }
-        .spiritual-section blockquote { border-left: 4px solid var(--accent) !important; padding: var(--pad-sm) var(--pad-md) !important; margin: var(--pad-md) auto !important; background: linear-gradient(90deg, rgba(124, 92, 255, 0.1) 0%, transparent 100%) !important; border-radius: 0 var(--radius-sm) var(--radius-sm) 0 !important; color: #fff !important; font-style: italic; box-shadow: none !important; text-align: left; max-width: 100%; }
-        .spiritual-section cite { display: block; text-align: right; color: var(--accent-2) !important; margin-top: 10px; font-weight: 600; font-style: normal; }
+        /* Buttons */
+        .plant-seed-wrapper { text-align: center; margin: 30px 0; }
+        .cta-button, .plant-seed-btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--orange-gradient);
+            color: white !important; font-weight: 700; font-size: 1.1rem;
+            padding: 16px 36px; border-radius: 999px; border: none;
+            text-decoration: none; box-shadow: 0 4px 15px rgba(229, 90, 43, 0.4);
+            transition: transform 0.3s ease;
+        }
+        .cta-button:hover, .plant-seed-btn:hover {
+            transform: scale(1.05);
+        }
 
-        .pricing-section { text-align: center; position: relative; }
-        .pricing-quote h2 { font-family: 'Merriweather', serif; font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.5rem); text-shadow: 0 0 15px rgba(124, 92, 255, 0.5); background: linear-gradient(to right, #c9c9ff, #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .divisor-section { text-align: center; padding: var(--pad-md) 0; }
-        .divisor-image { max-width: min(640px, 85vw); margin: 0 auto; filter: drop-shadow(0 0 10px rgba(124, 92, 255, 0.3)); }
-        #minha-secao { scroll-margin-top: 80px; }
+        /* Spiritual Section */
+        .spiritual-section {
+            background-color: var(--bg-color);
+            padding: 20px 15px;
+            display: flex; justify-content: center;
+        }
+        .spiritual-container {
+            background-color: var(--purple-dark);
+            border: 1px solid var(--purple-border);
+            border-radius: 12px;
+            padding: 30px 20px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .spiritual-container h3 {
+            font-family: 'Merriweather', serif;
+            color: #fff; font-size: 1.5rem; margin-bottom: 15px; font-weight: 700;
+        }
+        .spiritual-container p {
+            font-size: 0.95rem; color: var(--text-main); line-height: 1.6; margin-bottom: 15px;
+        }
+        .spiritual-container blockquote {
+            border-left: 3px solid var(--purple-accent);
+            padding: 10px 15px; margin: 20px auto;
+            text-align: left; background: rgba(255,255,255,0.02);
+            font-style: italic; color: #fff; border-radius: 0 8px 8px 0;
+        }
+        .spiritual-container blockquote p { margin-bottom: 5px; font-size: 0.95rem; }
+        .spiritual-container cite { display: block; text-align: right; font-size: 0.85rem; color: var(--text-muted); font-style: normal; }
+        .spiritual-container .donation-text { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
 
-        .proof-card { background: linear-gradient(145deg, var(--card), var(--surface)) !important; border: 1px solid var(--border) !important; border-radius: var(--radius) !important; padding: var(--pad-lg) !important; transition: all 0.4s ease !important; position: relative; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; }
-        .proof-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.5; transition: opacity 0.4s ease; }
-        .proof-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(124, 92, 255, 0.2) !important; border-color: var(--accent) !important; }
-        .proof-card:hover::after { opacity: 1; }
-        .proof-quote { color: #fff !important; text-shadow: 0 0 5px rgba(255, 255, 255, 0.2); }
-        .section-title { font-family: 'Merriweather', serif; text-shadow: 0 0 15px rgba(124, 92, 255, 0.5); background: linear-gradient(to right, #c9c9ff, #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* Pricing */
+        .pricing-section {
+            text-align: center; padding: 40px 15px 20px; background-color: var(--bg-color);
+        }
+        .pricing-quote h2 {
+            font-family: 'Merriweather', serif; font-size: 1.6rem; color: #fff; margin-bottom: 25px;
+        }
+        .pricing-options {
+            display: flex; flex-direction: column; gap: 15px; align-items: center;
+        }
+        .pricing-options img {
+            width: 100%; max-width: 400px; border-radius: 12px;
+            transition: transform 0.2s ease;
+        }
+        .pricing-options a:hover img { transform: scale(1.02); }
+
+        /* Divisor */
+        .divisor-section { text-align: center; margin: 20px 0; }
+        .divisor-image { max-width: 80%; height: auto; opacity: 0.8; }
+
+        /* Social Proof */
+        .social-proof-wrapper {
+            background-color: var(--bg-color);
+            padding: 40px 15px 60px; text-align: center;
+        }
+        .section-title {
+            font-family: 'Merriweather', serif; font-size: 1.8rem; color: #fff; margin-bottom: 10px;
+        }
+        .section-subtitle {
+            font-size: 0.95rem; color: var(--text-muted); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+        .proof-grid {
+            display: flex; flex-direction: column; gap: 20px; max-width: 500px; margin: 0 auto 40px;
+        }
+        .proof-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px; padding: 25px; text-align: left;
+            position: relative;
+        }
+        .proof-quote {
+            font-family: 'Merriweather', serif; font-weight: 700; color: #fff; font-size: 1.05rem; margin: 0 0 15px 0; padding-left: 25px; position: relative;
+        }
+        .proof-quote::before {
+            content: '\f10d'; font-family: "Font Awesome 6 Free"; font-weight: 900;
+            position: absolute; left: 0; top: 0; color: var(--purple-accent); font-size: 0.9rem;
+        }
+        .proof-body {
+            font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;
+        }
+        .proof-author-info {
+            display: flex; justify-content: space-between; align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;
+        }
+        .proof-author-name { font-size: 0.85rem; color: #fff; font-weight: 500; }
+        .proof-rating i { color: #eab308; font-size: 0.8rem; margin-left: 2px; }
+
+        #minha-secao { scroll-margin-top: 20px; }
     </style>
     <script src="https://scripts.converteai.net/c90f7aac-d958-45ea-9216-c109249853cc/players/69908b3672552541034e1aee/v4/player.js" async></script>
     <script src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" id="vturb-smartplayer-js" fetchpriority="high"></script>
@@ -188,176 +236,7 @@
                 <img src="../../global_images/divisoria.png" alt="Divisória" class="divisor-image">
             </div>
 
-            <div class="celestino-component">
-                <style>
-                    /* Componente celestino otimizado */
-                    .celestino-component { font-family: 'Lato', sans-serif; line-height: 1.6; color: var(--light); width: 100%; max-width: min(1200px, 95vw); margin: 0 auto; padding: 0 clamp(10px, 2vw, 20px); }
-                    .celestino-component * { margin: 0; padding: 0; box-sizing: border-box; }
-                    .celestino-component .celestino-bonus-section { position: relative; overflow: hidden; background: var(--dark-purple); border-radius: var(--border-radius); }
-                    .celestino-component .particles { display: none; }
-                    .celestino-component .celestino-header { text-align: center; padding: clamp(15px, 4vw, 20px) 0 clamp(30px, 6vw, 40px); position: relative; }
-                    .celestino-component .gift-icon { font-size: clamp(1.8rem, 4vw, 2.2rem); color: var(--secondary); margin-bottom: clamp(10px, 3vw, 15px); display: block; }
-                    .celestino-component .celestino-header h2 { font-family: 'Merriweather', serif; font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: clamp(10px, 3vw, 15px); color: #667eea; background: var(--gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.3; font-weight: 700; letter-spacing: 1px; text-shadow: 0 0 30px rgba(102, 126, 234, 0.3); position: relative; }
-                    @supports not (-webkit-background-clip: text) { .celestino-component .celestino-header h2 { color: #667eea !important; background: none !important; } }
-                    .celestino-component .celestino-header h2::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: var(--accent); border-radius: 2px; opacity: 0.8; }
-                    .celestino-component .celestino-header::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at top, rgba(142, 68, 173, 0.2) 0%, transparent 70%); pointer-events: none; z-index: -1; }
-                    .celestino-component .celestino-benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(20px, 4vw, 30px); margin-top: clamp(15px, 3vw, 20px); position: relative; }
-                    .celestino-component .benefit-card { background: var(--glass-bg); backdrop-filter: var(--glass-blur-heavy); -webkit-backdrop-filter: var(--glass-blur-heavy); border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-soft); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--glass-border); position: relative; display: flex; flex-direction: column; height: 100%; will-change: transform; }
-                    .celestino-component .benefit-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--secondary); opacity: 0; transition: opacity 0.4s ease; }
-                    .celestino-component .benefit-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: var(--shadow-glow); border-color: var(--glass-border); }
-                    .celestino-component .benefit-card:hover::before { opacity: 1; }
-                    .celestino-component .benefit-number { position: absolute; top: 10px; right: 10px; background: var(--secondary); color: var(--dark); width: clamp(25px, 5vw, 30px); height: clamp(25px, 5vw, 30px); display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 700; font-size: clamp(0.8rem, 2vw, 1rem); z-index: 3; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); }
-                    .celestino-component .icon-container { height: 180px; display: flex; align-items: center; justify-content: center; position: relative; background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%); overflow: hidden; border-radius: var(--border-radius-small) var(--border-radius-small) 0 0; }
-                    .celestino-component .icon-container::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(240, 147, 251, 0.15) 0%, transparent 70%); }
-                    .celestino-component .icon-container::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); opacity: 0.8; }
-                    .celestino-component .benefit-icon { font-size: 5rem; position: relative; z-index: 2; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-                    .celestino-component .whatsapp-icon { color: var(--whatsapp); }
-                    .celestino-component .circle-icon { color: var(--circle); }
-                    .celestino-component .tarot-icon { color: var(--tarot); }
-                    .celestino-component .audio-icon { color: var(--audio); }
-                    .celestino-component .prayers-icon { color: var(--prayers); }
-                    .celestino-component .secret-icon { color: var(--secondary); }
-                    .celestino-component .benefit-icon:hover { transform: scale(1.05); }
-                    .celestino-component .card-content { padding: clamp(15px, 3vw, 25px); display: flex; flex-direction: column; flex-grow: 1; }
-                    .celestino-component .benefit-title { font-family: 'Merriweather', serif; font-size: clamp(1.1rem, 2.5vw, 1.5rem); margin-bottom: clamp(8px, 2vw, 15px); position: relative; padding-bottom: clamp(8px, 2vw, 12px); color: #f0d93b; background: var(--gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 600; letter-spacing: 0.5px; }
-                    @supports not (-webkit-background-clip: text) { .celestino-component .benefit-title { color: #f0d93b !important; background: none !important; } }
-                    .celestino-component .benefit-title::after { content: ""; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: var(--gold); border-radius: 3px; transition: all 0.4s ease; opacity: 0.8; }
-                    .celestino-component .benefit-card:hover .benefit-title::after { width: 100%; opacity: 1; }
-                    .celestino-component .benefit-description { margin-bottom: clamp(15px, 3vw, 20px); opacity: 0.85; flex-grow: 1; font-size: clamp(0.9rem, 2vw, 1.05rem); color: var(--light); line-height: 1.5; }
-                    .celestino-component .benefit-features { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; margin-bottom: 20px; }
-                    .celestino-component .feature { font-size: 0.9rem; padding: 5px 12px; background: rgba(255, 255, 255, 0.1); border-radius: 20px; display: flex; align-items: center; gap: 5px; }
-                    .celestino-component .feature i { color: var(--secondary); font-size: 0.8rem; }
-                    .celestino-component .celestino-footer-note { margin-top: clamp(40px, 8vw, 60px); padding: clamp(20px, 4vw, 30px); background: rgba(41, 41, 66, 0.7); border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center; border: 1px solid rgba(255, 255, 255, 0.05); position: relative; z-index: 2; margin-left: clamp(15px, 3vw, 20px); margin-right: clamp(15px, 3vw, 20px); }
-                    .celestino-component .celestino-footer-note h3 { font-family: 'Merriweather', serif; font-size: clamp(1.2em, 3vw, 1.5em); margin-bottom: clamp(12px, 3vw, 15px); color: var(--light); position: relative; display: inline-block; }
-                    .celestino-component .celestino-footer-note h3::after { content: ""; position: absolute; bottom: -5px; left: 0; right: 0; height: 2px; background: var(--secondary); border-radius: 1px; }
-                    .celestino-component .celestino-footer-note p { font-size: clamp(0.95em, 2.5vw, 1.1em); margin: clamp(8px, 2vw, 10px) 0; line-height: 1.6; }
-                    .celestino-component .cta-button { display: inline-block; background: var(--primary); color: var(--text-primary); padding: clamp(15px, 3vw, 18px) clamp(30px, 6vw, 40px); border-radius: 50px; text-decoration: none; font-weight: 700; font-size: clamp(1rem, 2.5vw, 1.2rem); margin-top: clamp(20px, 4vw, 25px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: var(--shadow-soft); border: 1px solid var(--glass-border); cursor: pointer; text-align: center; position: relative; overflow: hidden; will-change: transform; backdrop-filter: var(--glass-blur-light); -webkit-backdrop-filter: var(--glass-blur-light); letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; }
-                    .celestino-component .cta-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent); transition: left 0.6s ease; }
-                    .celestino-component .cta-button:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 15px 40px rgba(240, 147, 251, 0.4); }
-                    .celestino-component .cta-button:hover::before { left: 100%; }
-                    .celestino-component .cta-button:active { transform: translateY(-1px) scale(1.02); }
-                    .celestino-component { padding: clamp(15px, 4vw, 20px) clamp(10px, 3vw, 15px); }
-                    .celestino-component .celestino-benefits-grid { grid-template-columns: 1fr; gap: clamp(8px, 2vw, 10px); padding: 0; }
-                    .celestino-component .celestino-header h2 { font-size: clamp(1.4rem, 5vw, 1.5rem); padding: 0 10px; line-height: 1.2; }
-                    .celestino-component .benefit-number { top: 8px; right: 8px; width: 25px; height: 25px; font-size: 0.8rem; }
-                    .celestino-component .icon-container { height: clamp(80px, 12vw, 90px); }
-                    .celestino-component .benefit-icon { font-size: clamp(1.8rem, 6vw, 2rem); }
-                    .celestino-component .benefit-title { font-size: clamp(1rem, 4vw, 1.1rem); }
-                    .celestino-component .benefit-description { font-size: clamp(0.9rem, 2.5vw, 0.95rem); }
-                    .celestino-component .card-content { padding: clamp(12px, 3vw, 15px); }
-                    .celestino-component .benefit-features { gap: clamp(3px, 1vw, 5px); }
-                    .celestino-component .feature { padding: clamp(2px, 1vw, 3px) clamp(6px, 2vw, 8px); font-size: clamp(0.7rem, 2vw, 0.75rem); }
-                    .celestino-component .celestino-footer-note { padding: clamp(12px, 3vw, 15px); margin: clamp(25px, 5vw, 30px) 0 0 0; }
-                    .celestino-component .celestino-footer-note h3 { font-size: clamp(1.1em, 3vw, 1.2em); }
-                    .celestino-component .celestino-footer-note p { font-size: clamp(0.9rem, 2.5vw, 0.95rem); }
-                </style>
 
-                <div class="celestino-bonus-section">
-                    <header class="celestino-header">
-                        <i class="fas fa-gift gift-icon"></i>
-                        <h2>Recevez tout cela<br>dès que vous plantez votre<br>graine</h2>
-                    </header>
-                    <div class="celestino-benefits-grid">
-                        <div class="benefit-card">
-                            <div class="benefit-number">1</div>
-                            <div class="icon-container">
-                                <div class="benefit-icon whatsapp-icon"><i class="fab fa-whatsapp"></i></div>
-                            </div>
-                            <div class="card-content">
-                                <h3 class="benefit-title">WhatsApp VIP avec Celestino</h3>
-                                <p class="benefit-description">Obtenez un accès direct à Celestino via un canal WhatsApp exclusif, en recevant des réponses spirituelles en quelques minutes. Posez des questions sur vos défis, recevez une guidance divine et clarifiez vos doutes en priorité absolue.</p>
-                                <div class="benefit-features">
-                                    <span class="feature"><i class="fas fa-check"></i> Réponse Rapide</span>
-                                    <span class="feature"><i class="fas fa-star"></i> Accès Exclusif</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="benefit-card">
-                            <div class="benefit-number">2</div>
-                            <div class="icon-container">
-                                <div class="benefit-icon circle-icon"><i class="fas fa-circle-notch"></i></div>
-                            </div>
-                            <div class="card-content">
-                                <h3 class="benefit-title">Cercle de Lumière sur WhatsApp</h3>
-                                <p class="benefit-description">Participez à un groupe restreint qui reçoit des messages quotidiens de guidance spirituelle et des mantras puissants. L'énergie collective amplifie vos vibrations, créant un champ de protection et de manifestation accélérée pour tous les participants.</p>
-                                <div class="benefit-features">
-                                    <span class="feature"><i class="fas fa-users"></i> Communauté</span>
-                                    <span class="feature"><i class="fas fa-shield-alt"></i> Protection</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="benefit-card">
-                            <div class="benefit-number">3</div>
-                            <div class="icon-container">
-                                <div class="benefit-icon tarot-icon"><i class="fas fa-star"></i></div>
-                            </div>
-                            <div class="card-content">
-                                <h3 class="benefit-title">Tarot des Anges Personnalisé</h3>
-                                <p class="benefit-description">Recevez une lecture exclusive du Tarot des Anges qui révèle votre scénario divin pour les prochaines étapes. Ce puissant outil de clarté spirituelle identifie les blocages cachés et illumine le chemin que les anges ont préparé spécialement pour vous.</p>
-                                <div class="benefit-features">
-                                    <span class="feature"><i class="fas fa-map-marked-alt"></i> Guidance</span>
-                                    <span class="feature"><i class="fas fa-unlock"></i> Déblocage</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="benefit-card">
-                            <div class="benefit-number">4</div>
-                            <div class="icon-container">
-                                <div class="benefit-icon audio-icon"><i class="fas fa-music"></i></div>
-                            </div>
-                            <div class="card-content">
-                                <h3 class="benefit-title">Audio Angélique 432 Hz</h3>
-                                <p class="benefit-description">Transformez votre énergie en seulement 7 minutes avec cette méditation guidée à la fréquence angélique de 432 Hz. Scientifiquement prouvée pour harmoniser vos chakras, réduire l'anxiété et synchroniser votre champ énergétique avec les plus hautes vibrations de l'univers.</p>
-                                <div class="benefit-features">
-                                    <span class="feature"><i class="fas fa-heartbeat"></i> Fréquence</span>
-                                    <span class="feature"><i class="fas fa-brain"></i> Harmonie</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="benefit-card">
-                            <div class="benefit-number">5</div>
-                            <div class="icon-container">
-                                <div class="benefit-icon prayers-icon"><i class="fas fa-pray"></i></div>
-                            </div>
-                            <div class="card-content">
-                                <h3 class="benefit-title">Les Prières de Guérison des Moines</h3>
-                                <p class="benefit-description">Collection exclusive de 7 prières anciennes préservées par des moines tibétains, traduites et adaptées pour des résultats immédiats. Chaque mot a été soigneusement sélectionné pour créer un champ de protection spirituelle et restaurer votre connexion avec le divin.</p>
-                                <div class="benefit-features">
-                                    <span class="feature"><i class="fas fa-hand-holding-heart"></i> Protection</span>
-                                    <span class="feature"><i class="fas fa-spa"></i> Guérison</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="benefit-card">
-                            <div class="benefit-number">6</div>
-                            <div class="icon-container">
-                                <div class="benefit-icon secret-icon"><i class="fas fa-gem"></i></div>
-                            </div>
-                            <div class="card-content">
-                                <h3 class="benefit-title">Bonus Secret Premium</h3>
-                                <p class="benefit-description">Un don spirituel extraordinaire que Celestino garde secret jusqu'au bon moment. Il a été spécialement créé pour amplifier votre capacité de manifestation et ouvrir des portails d'abondance qui restent fermés à la plupart des gens.</p>
-                                <div class="benefit-features">
-                                    <span class="feature"><i class="fas fa-crown"></i> Exclusif</span>
-                                    <span class="feature"><i class="fas fa-key"></i> Transformateur</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="celestino-footer-note">
-                        <h3><i class="fas fa-heart"></i> Transformation Spirituelle Complète</h3>
-                        <p>Tous ces dons sacrés seront à votre disposition <strong>immédiatement</strong> après la confirmation de votre don symbolique.</p>
-                        <p>Ensemble, ces ressources forment un système complet d'élévation spirituelle qui transforme non seulement votre destin, mais aussi votre énergie vitale.</p>
-                        <p><strong>C'est une opportunité unique</strong> — ces éléments ne sont disponibles nulle part ailleurs.</p>
-                        <a href="#minha-secao" class="cta-button" id="00799b65-0f75-b62a-dfe0-878ad5346098">Je Veux Recevoir Mes Cadeaux Maintenant <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
 
             <!-- Estrutura HTML da Seção de Prova Social -->
             <div class="social-proof-wrapper">
